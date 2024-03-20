@@ -11,6 +11,7 @@
               <v-text-field
                 label="Valor"
                 placeholder="Digite o valor desejado"
+                ref="inputRef"
                 clearable
                 v-model="controller.valor.value"
               >
@@ -53,7 +54,10 @@
           </div>
         </v-form>
         <v-row class="d-flex justify-center mt-8">
-            <v-text-title> última Cotação: {{ controller.valor1.value}} - - {{ controller.valor2.value }}</v-text-title>
+          <v-text-title>
+            última Cotação: {{ controller.valor1.value }} - -
+            {{ controller.valor2.value }}</v-text-title
+          >
         </v-row>
       </v-col>
       <v-row>
@@ -66,6 +70,20 @@
 </template>
 
 <script setup>
+import { useCurrencyInput } from "vue-currency-input";
+
+const { inputRef } = useCurrencyInput({
+  currency: "BRL",
+  currencyDisplay: "hidden",
+  precision: 2,
+  hideCurrencySymbolOnFocus: false,
+  hideGroupingSeparatorOnFocus: false,
+  hideNegligibleDecimalDigitsOnFocus: false,
+  autoDecimalDigits: true,
+  useGrouping: true,
+  accountingSign: false,
+  locale: "pt-BR",
+});
 
 import MostraValores from "./mostraValores.vue";
 
