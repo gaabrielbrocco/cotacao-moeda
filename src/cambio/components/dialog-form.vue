@@ -8,7 +8,13 @@
         <v-form @submit.prevent="controller.mostraValor()">
           <v-row class="d-flex justify-center">
             <v-col cols="4">
-              <v-text-field label="Valor" placeholder="Digite o valor desejado" clearable> </v-text-field>
+              <v-text-field
+                v-maska:[valor]
+                label="Valor"
+                placeholder="Digite o valor desejado"
+                clearable
+              >
+              </v-text-field>
             </v-col>
           </v-row>
           <v-row class="d-flex justify-center mb-2">
@@ -77,6 +83,25 @@
 </template>
 
 <script setup>
+const valor = {
+  mask: "#.##",
+  tokens: "0:\d:multiple|9:\d:optional",
+
+  preProcess: (val) => val.replace(/[$,]/g, ""),
+  postProcess: (val) => {
+    if (!val) return "";
+
+    const sub = 3 - (val.includes(".") ? val.length - val.indexOf(".") : 0);
+
+    return Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    })
+      .format(val)
+      .slice(0, sub ? -sub : undefined);
+  },
+};
+
 import MostraValores from "./mostraValores.vue";
 
 const { controller } = defineProps({
