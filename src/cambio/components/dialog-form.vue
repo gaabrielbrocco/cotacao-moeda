@@ -9,10 +9,10 @@
           <v-row class="d-flex justify-center">
             <v-col cols="4">
               <v-text-field
-                v-maska:[valor]
                 label="Valor"
                 placeholder="Digite o valor desejado"
                 clearable
+                v-model="controller.valor.value"
               >
               </v-text-field>
             </v-col>
@@ -23,19 +23,9 @@
                 v-model="controller.textoCambio1.value"
                 label="Converter de"
                 color="warning"
-                :items="[
-                  'USD - Dólar Americano',
-                  'EUR - Euro',
-                  'BRL - Real',
-                  'JPY - Iene',
-                  'GBP - Libra Esterlina',
-                  'CHF - Franco Suíço',
-                  'CAD - Dólar Canadense',
-                  'AUD - Dólar Australiano',
-                  'ARS - Peso Argentino',
-                  'CNY - Yuan',
-                  'BTC - Bitcoin',
-                ]"
+                :items="controller.comboCambio.value"
+                item-title="t"
+                item-value="v"
                 variant="outlined"
               ></v-select>
             </v-col>
@@ -44,19 +34,9 @@
                 v-model="controller.textoCambio2.value"
                 label="Para"
                 color="warning"
-                :items="[
-                  'USD - Dólar Americano',
-                  'EUR - Euro',
-                  'BRL - Real',
-                  'JPY - Iene',
-                  'GBP - Libra Esterlina',
-                  'CHF - Franco Suíço',
-                  'CAD - Dólar Canadense',
-                  'AUD - Dólar Australiano',
-                  'ARS - Peso Argentino',
-                  'CNY - Yuan',
-                  'BTC - Bitcoin',
-                ]"
+                :items="controller.comboCambio.value"
+                item-title="t"
+                item-value="v"
                 variant="outlined"
               ></v-select>
             </v-col>
@@ -72,6 +52,9 @@
             </v-btn>
           </div>
         </v-form>
+        <v-row class="d-flex justify-center mt-8">
+            <v-text-title> última Cotação: {{ controller.valor1.value}} - - {{ controller.valor2.value }}</v-text-title>
+        </v-row>
       </v-col>
       <v-row>
         <v-col cols="12">
@@ -83,24 +66,6 @@
 </template>
 
 <script setup>
-const valor = {
-  mask: "#.##",
-  tokens: "0:\d:multiple|9:\d:optional",
-
-  preProcess: (val) => val.replace(/[$,]/g, ""),
-  postProcess: (val) => {
-    if (!val) return "";
-
-    const sub = 3 - (val.includes(".") ? val.length - val.indexOf(".") : 0);
-
-    return Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-    })
-      .format(val)
-      .slice(0, sub ? -sub : undefined);
-  },
-};
 
 import MostraValores from "./mostraValores.vue";
 
