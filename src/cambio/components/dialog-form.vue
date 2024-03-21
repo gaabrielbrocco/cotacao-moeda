@@ -53,7 +53,7 @@
           </div>
         </v-form>
         <v-row class="d-flex justify-center mt-8">
-            <v-text-title> última Cotação: {{ controller.valor1.value}} - - {{ controller.valor2.value }}</v-text-title>
+            <v-text-title> Última Cotação: {{ controller.valor1.value}} - - {{ controller.valor2.value }}</v-text-title>
         </v-row>
       </v-col>
       <v-row>
