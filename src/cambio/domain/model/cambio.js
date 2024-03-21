@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+
 class Cambio {
     constructor({
         code = "",
@@ -22,7 +24,7 @@ class Cambio {
         this.bid = bid;
         this.ask = ask;
         this.timestamp = timestamp;
-        this.create_date = create_date;
+        this.create_date = create_date ? dayjs(create_date).format("DD/MM/YYYY - HH:mm:ss") : ""
     }
 }
 export default Cambio;

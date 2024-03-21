@@ -35,7 +35,7 @@ const cambioController = (buscaCambioUseCase) => () => {
     }
 
     const converteBid = () => {
-        const valorNumerico = modelCambio.value.bid * valor.value;
+        const valorNumerico = parseFloat(modelCambio.value.bid) * parseFloat(valor.value);
         valorBid.value = new Intl.NumberFormat( {
             style: 'currency',
             currency: 'BRL'
@@ -44,7 +44,7 @@ const cambioController = (buscaCambioUseCase) => () => {
     }
 
     const converteAsk = () => {
-        const valorNumerico = modelCambio.value.ask * valor.value;
+        const valorNumerico = parseFloat(modelCambio.value.ask) * parseFloat(valor.value);
         valorAsk.value = new Intl.NumberFormat({
             style: 'currency',
             currency: 'BRL'
@@ -58,8 +58,8 @@ const cambioController = (buscaCambioUseCase) => () => {
             style: 'currency',
             currency: 'BRL'
         }).format(valorNumerico);
-        const valorSemVirgula = valorMedioFormatado.replace(',', '.');
-        valorMedio.value = valorSemVirgula;
+        const valorMedioFormatadoSemVirgula = valorMedioFormatado.replace(',', '.');
+        valorMedio.value = valorMedioFormatadoSemVirgula;
         return valorMedio.value.toFixed(3);
     }
 
