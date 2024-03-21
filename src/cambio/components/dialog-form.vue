@@ -11,6 +11,8 @@
               <v-text-field
                 label="Valor"
                 placeholder="Digite o valor desejado"
+                base-color="warning"
+                color="warning"
                 clearable
                 v-model="controller.valor.value"
               >

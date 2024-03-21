@@ -8,11 +8,14 @@
           >
           <v-text-field
             v-model="controller.modelCambio.value.create_date"
+            base-color="warning"
+            color="warning"
+            focused="true"
             hide-details
             readonly
           >
             <template v-slot:append>
-              <v-tooltip text="buon giorno" location="bottom">
+              <v-tooltip location="bottom">
                 <template v-slot:activator="{ props }">
                   <v-icon v-bind="props"> mdi-information </v-icon>
                 </template>
@@ -27,6 +30,9 @@
           >
           <v-text-field
             v-model="controller.modelCambio.value.bid"
+            base-color="warning"
+            color="warning"
+            focused="true"
             hide-details
             readonly
           >
@@ -46,6 +52,9 @@
           >
           <v-text-field
             v-model="controller.modelCambio.value.ask"
+            base-color="warning"
+            color="warning"
+            focused=""
             hide-details
             readonly
           >
@@ -66,7 +75,7 @@
             </v-text-title>
             <v-text-field
               variant="outlined"
-              disabled
+              readonly
               v-model="controller.valorBid.value"
             ></v-text-field>
           </v-col>
@@ -76,7 +85,7 @@
             </v-text-title>
             <v-text-field
               variant="outlined"
-              disabled
+              readonly
               v-model="controller.valorAsk.value"
             ></v-text-field>
           </v-col>
@@ -88,7 +97,7 @@
             </v-text-title>
             <v-text-field
               variant="outlined"
-              disabled
+              readonly
               v-model="controller.valorMedio.value"
             ></v-text-field>
           </v-col>
