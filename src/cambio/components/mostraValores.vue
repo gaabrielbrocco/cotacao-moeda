@@ -10,6 +10,7 @@
             v-model="controller.modelCambio.value.create_date"
             base-color="warning"
             color="warning"
+            focused
             hide-details
             readonly
           >
@@ -31,6 +32,7 @@
             v-model="controller.modelCambio.value.bid"
             base-color="warning"
             color="warning"
+            focused
             hide-details
             readonly
           >
@@ -52,7 +54,7 @@
             v-model="controller.modelCambio.value.ask"
             base-color="warning"
             color="warning"
-            focused=""
+            focused
             hide-details
             readonly
           >
