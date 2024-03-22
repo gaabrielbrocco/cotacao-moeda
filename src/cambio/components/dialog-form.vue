@@ -10,6 +10,7 @@
             <v-col cols="4">
               <v-text-field
                 label="Valor"
+                focused
                 placeholder="Digite o valor desejado"
                 base-color="warning"
                 color="warning"

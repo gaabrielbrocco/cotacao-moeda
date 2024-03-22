@@ -70,9 +70,9 @@
         </v-col>
         <v-row class="d-flex justify-center mt-15">
           <v-col>
-            <v-text-title class="d-flex justify-center mb-2"
+            <p class="d-flex justify-center mb-2"
               >Conversão sobre BID
-            </v-text-title>
+            </p>
             <v-text-field
               variant="outlined"
               readonly
@@ -80,9 +80,9 @@
             ></v-text-field>
           </v-col>
           <v-col>
-            <v-text-title class="d-flex justify-center mb-2">
+            <p class="d-flex justify-center mb-2">
               Conversão sobre ASK
-            </v-text-title>
+            </p>
             <v-text-field
               variant="outlined"
               readonly
@@ -92,9 +92,9 @@
         </v-row>
         <v-row class="d-flex justify-center">
           <v-col cols="6">
-            <v-text-title class="d-flex justify-center mb-2">
+            <p class="d-flex justify-center mb-2">
               Preço médio
-            </v-text-title>
+            </p>
             <v-text-field
               variant="outlined"
               readonly
