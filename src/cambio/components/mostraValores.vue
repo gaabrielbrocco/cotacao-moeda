@@ -10,7 +10,6 @@
             v-model="controller.modelCambio.value.create_date"
             base-color="warning"
             color="warning"
-            focused="true"
             hide-details
             readonly
           >
@@ -32,12 +31,11 @@
             v-model="controller.modelCambio.value.bid"
             base-color="warning"
             color="warning"
-            focused="true"
             hide-details
             readonly
           >
             <template v-slot:append>
-              <v-tooltip text="buon giorno" location="bottom">
+              <v-tooltip location="bottom">
                 <template v-slot:activator="{ props }">
                   <v-icon v-bind="props"> mdi-information </v-icon>
                 </template>
