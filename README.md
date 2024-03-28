@@ -13,7 +13,7 @@ Aplicação que realiza conversões de moedas internacionais para cotações de 
 
 Use o comando abaixo para realizar a instalação das dependências:
 
-| [npm](https://vuetifyjs.com/en/getting-started/installation/)     | `npm create vuetify`  |
+| [npm](https://vuetifyjs.com/en/getting-started/installation/)     | `npm i`  |
 
 Após completar a instalção, está pronto para o desenvolvimento com Vuetify.
 
